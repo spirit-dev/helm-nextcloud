@@ -1,0 +1,15 @@
+dependencies:
+- name: nextcloud
+  repository: https://nextcloud.github.io/helm/
+  version: 5.5.2
+- name: postgresql
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 15.5.0
+- name: mariadb
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 18.2.4
+- name: redis
+  repository: oci://registry-1.docker.io/bitnamicharts
+  version: 19.6.0
+digest: sha256:2990b8c3b26623302f7138d39d87866cf8d474ad67bf6f83901ffdadfbb8e7d6
+generated: "2024-07-30T09:30:19.336631674-04:00"
