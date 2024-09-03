@@ -25,10 +25,19 @@ The installation should be done in two steps:
 
 If you need to jump in the pod and run some manual commands. This can be done with the following:
 
+Option 1 - from official doc [github](https://github.com/nextcloud/helm/blob/main/charts/nextcloud/README.md#running-occ-commands)
+
+```bash
+# $NEXTCLOUD_POD should be the name of *your* nextcloud pod :)
+#> kubectl exec $NEXTCLOUD_POD -- su -s /bin/sh www-data -c "php occ myocccomand"
+```
+
+Option 2:
+
 ```bash
 #> runuser --user www-data -- php occ upgrade/other
 
-Can also be:
+Using kubectl:
 
 #> kubectl exec -n [ns] [pod] nextcloud -- runuser --user www-data -- php occ upgrade/other
 
