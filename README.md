@@ -8,6 +8,7 @@
   - [Table of content](#table-of-content)
   - [Installation process](#installation-process)
   - [Run manual command](#run-manual-command)
+  - [in case of issues](#in-case-of-issues)
 
 ## Installation process
 
@@ -42,3 +43,7 @@ Using kubectl:
 #> kubectl exec -n [ns] [pod] nextcloud -- runuser --user www-data -- php occ upgrade/other
 
 ```
+
+## in case of issues
+
+- Use the web upgrade -> [values.turingpi.yaml#67](helm/values.turingpi.yaml#67)
