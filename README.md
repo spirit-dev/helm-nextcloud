@@ -4,11 +4,7 @@
 
 ## Table of content
 
-- [Welcome to nextcloud](#welcome-to-nextcloud)
-  - [Table of content](#table-of-content)
-  - [Installation process](#installation-process)
-  - [Run manual command](#run-manual-command)
-  - [in case of issues](#in-case-of-issues)
+[[_TOC_]]
 
 ## Installation process
 
