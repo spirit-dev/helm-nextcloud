@@ -33,11 +33,8 @@ help:
 warning: ## A warning to make you warned
 	@echo -e "$$(cat ARGOCD-OWNED)\n"
 	@exit 1
-dependencies: ## Helm dependencies update
-	@${HELM_BIN} repo add ${RELEASE_NAME} ${HELM_OFFICIAL_CHART}
-	@${HELM_BIN} dep update ${HELM_CHART_DIR}
 template: ## Helm template
-	@${HELM_BIN} template ${RELEASE_NAME} ${HELM_CHART_DIR} --namespace ${NAMESPACE} -f ${HELM_CHART_DIR}/values.${ENV}.yaml
+	@${HELM_BIN} template --dependency-update ${RELEASE_NAME} ${HELM_CHART_DIR} --namespace ${NAMESPACE} -f ${HELM_CHART_DIR}/values.${ENV}.yaml
 dry-run: template warning ## Template plus dry-run of the helm chart
 	@${HELM_BIN} upgrade --dry-run ${SET_FORCE} --install --namespace ${NAMESPACE} -f ${HELM_CHART_DIR}/values.${ENV}.yaml ${RELEASE_NAME} ${HELM_CHART_DIR}
 install: warning ## Helm intallation
