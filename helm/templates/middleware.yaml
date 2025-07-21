@@ -5,7 +5,7 @@ metadata:
   name: {{ .Values.nextcloud.fullnameOverride }}-redirectregex
   namespace: {{ .Release.Namespace }}
   labels:
-    app.kubernetes.io/name: {{ include "nextcloud.name" . }}
+    app.kubernetes.io/name: {{ .Values.nextcloud.fullnameOverride }}
     helm.sh/chart: {{ include "nextcloud.chart" . }}
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}

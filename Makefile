@@ -10,7 +10,6 @@ pod := $$(kubectl get pods -n ${NAMESPACE} |  grep -m1 ${RELEASE_NAME} | cut -d'
 # Current dir
 CURRENT_DIR = $(shell pwd)
 HELM_CHART_DIR = ${CURRENT_DIR}/helm
-HELM_OFFICIAL_CHART = https://nextcloud.github.io/helm/
 
 # HELM
 HELM_BIN ?= helm
