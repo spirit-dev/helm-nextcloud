@@ -84,16 +84,16 @@ nextcloud:
   nextcloud:
     host: nextcloud.kube.home
     username: admin
-    password: changeme
+    password: changeme # pragma: allowlist secret
     ## Use an existing secret
     existingSecret:
       enabled: false
       # secretName: nameofsecret
       usernameKey: nextcloud-username
-      passwordKey: nextcloud-password
+      passwordKey: nextcloud-password # pragma: allowlist secret
       tokenKey: ""
       smtpUsernameKey: smtp-username
-      smtpPasswordKey: smtp-password
+      smtpPasswordKey: smtp-password # pragma: allowlist secret
       smtpHostKey: smtp-host
     update: 0
     # If web server is not binding default port, you can define it
@@ -116,7 +116,7 @@ nextcloud:
         port: 465
         authtype: LOGIN
         name: user
-        password: pass
+        password: pass # pragma: allowlist secret
     ## Primary ObjectStore options
     # see: https://docs.nextcloud.com/server/latest/admin_manual/configuration_files/primary_storage.html#configuring-object-storage-as-primary-storage
     objectStore:
@@ -416,7 +416,7 @@ nextcloud:
       enabled: false
       # secretName: nameofsecret
       usernameKey: db-username
-      passwordKey: db-password
+      passwordKey: db-password # pragma: allowlist secret
       # hostKey: db-hostname-or-ip
       # databaseKey: db-name
 
@@ -438,7 +438,7 @@ nextcloud:
     auth:
       database: nextcloud
       username: nextcloud
-      password: changeme
+      password: changeme # pragma: allowlist secret
       # Use existing secret (auth.rootPassword, auth.password, and auth.replicationPassword will be ignored).
       # secret must contain the keys mariadb-root-password, mariadb-replication-password and mariadb-password
       existingSecret: ""
@@ -468,7 +468,7 @@ nextcloud:
         # global.postgresql.auth overrides postgresql.auth
         auth:
           username: nextcloud
-          password: changeme
+          password: changeme # pragma: allowlist secret
           database: nextcloud
           # Name of existing secret to use for PostgreSQL credentials.
           # auth.postgresPassword, auth.password, and auth.replicationPassword will be ignored and picked up from this secret.
@@ -506,7 +506,7 @@ nextcloud:
     existingSecret:
       enabled: false
       # secretName: nameofsecret
-      passwordKey: redis-password
+      passwordKey: redis-password # pragma: allowlist secret
 
   ##
   ## Redis chart configuration
@@ -517,7 +517,7 @@ nextcloud:
     enabled: false
     auth:
       enabled: true
-      password: "changeme"
+      password: "changeme" # pragma: allowlist secret
       # name of an existing secret with Redis® credentials (instead of auth.password), must be created ahead of time
       existingSecret: ""
       # Password key to be retrieved from existing secret
@@ -563,11 +563,11 @@ nextcloud:
         # name of existing Kubernetes Secret with collboara admin credentials
         secretName: ""
         usernameKey: "username"
-        passwordKey: "password"
+        passwordKey: "password" # pragma: allowlist secret
 
       # setup admin login credentials, these are ignored if
       # collabora.collabora.existingSecret.enabled=true
-      password: examplepass
+      password: examplepass # pragma: allowlist secret
       username: admin
 
     # setup ingress
