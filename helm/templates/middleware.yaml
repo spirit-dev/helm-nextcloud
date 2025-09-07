@@ -1,0 +1,17 @@
+---
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: {{ .Values.nextcloud.fullnameOverride }}-redirectregex
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app.kubernetes.io/name: {{ .Values.nextcloud.fullnameOverride }}
+    helm.sh/chart: {{ include "nextcloud.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+    app.kubernetes.io/component: app
+spec:
+  redirectRegex:
+    permanent: true
+    regex: "https://(.*)/.well-known/(card|cal)dav"
+    replacement: "https://${1}/remote.php/dav/"
