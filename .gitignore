@@ -1,0 +1,5 @@
+**/*.tgz
+out*.yaml
+
+helm/charts
+data
