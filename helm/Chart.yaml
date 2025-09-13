@@ -26,17 +26,17 @@ dependencies:
     repository: https://nextcloud.github.io/helm/
     version: 6.6.10
   - name: postgresql
-    version: 16.7.4
+    version: 16.7.27
     repository: oci://registry-1.docker.io/bitnamicharts
     condition: nextcloudContext.postgresql.enabled
     alias: nextcloud-db-pg
   - name: mariadb
-    version: 20.5.5
+    version: 20.5.9
     repository: oci://registry-1.docker.io/bitnamicharts
     condition: nextcloudContext.mariadb.enabled
     alias: nextcloud-db
   - name: redis
-    version: 21.1.3
+    version: 21.2.14
     repository: oci://registry-1.docker.io/bitnamicharts
     condition: nextcloudContext.redis.enabled
     alias: nextcloud-cache

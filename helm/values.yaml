@@ -1037,7 +1037,7 @@ nextcloud-db:
   image:
     registry: docker.io
     repository: bitnami/mariadb
-    tag: 11.4.6-debian-12-r0
+    tag: 11.8.3-debian-12-r0
     digest: ""
     ## Specify a imagePullPolicy
     ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -2264,7 +2264,7 @@ nextcloud-db:
     image:
       registry: docker.io
       repository: bitnami/os-shell
-      tag: 12-debian-12-r43
+      tag: 12-debian-12-r51
       digest: ""
       pullPolicy: IfNotPresent
       ## Optionally specify an array of imagePullSecrets (secrets must be manually created in the namespace)
@@ -2308,7 +2308,7 @@ nextcloud-db:
     image:
       registry: docker.io
       repository: bitnami/mysqld-exporter
-      tag: 0.17.2-debian-12-r8
+      tag: 0.17.2-debian-12-r16
       digest: ""
       pullPolicy: IfNotPresent
       ## Optionally specify an array of imagePullSecrets (secrets must be manually created in the namespace)
@@ -2696,7 +2696,7 @@ nextcloud-cache:
   image:
     registry: docker.io
     repository: bitnami/redis
-    tag: 8.0.1-debian-12-r1
+    tag: 8.2.1-debian-12-r0
     digest: ""
     ## Specify a imagePullPolicy
     ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -3768,7 +3768,7 @@ nextcloud-cache:
     image:
       registry: docker.io
       repository: bitnami/redis-sentinel
-      tag: 8.0.1-debian-12-r0
+      tag: 8.2.1-debian-12-r0
       digest: ""
       ## Specify a imagePullPolicy
       ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -4372,7 +4372,7 @@ nextcloud-cache:
     image:
       registry: docker.io
       repository: bitnami/redis-exporter
-      tag: 1.72.0-debian-12-r1
+      tag: 1.76.0-debian-12-r0
       digest: ""
       pullPolicy: IfNotPresent
       ## Optionally specify an array of imagePullSecrets.
@@ -4744,7 +4744,7 @@ nextcloud-cache:
     image:
       registry: docker.io
       repository: bitnami/os-shell
-      tag: 12-debian-12-r44
+      tag: 12-debian-12-r51
       digest: ""
       pullPolicy: IfNotPresent
       ## Optionally specify an array of imagePullSecrets.
@@ -4808,7 +4808,7 @@ nextcloud-cache:
     image:
       registry: docker.io
       repository: bitnami/kubectl
-      tag: 1.33.1-debian-12-r0
+      tag: 1.33.4-debian-12-r0
       digest: ""
       ## Specify a imagePullPolicy
       ## ref: https://kubernetes.io/docs/concepts/containers/images/#pre-pulled-images
@@ -4877,7 +4877,7 @@ nextcloud-cache:
     image:
       registry: docker.io
       repository: bitnami/os-shell
-      tag: 12-debian-12-r44
+      tag: 12-debian-12-r51
       digest: ""
       pullPolicy: IfNotPresent
       ## Optionally specify an array of imagePullSecrets.
