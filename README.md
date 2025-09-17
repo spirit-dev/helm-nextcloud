@@ -120,3 +120,17 @@ To avoid issues while executing upgrades, a nice trick is to disable `liveness|r
 +    enabled: false
     initialDelaySeconds: 120
 ```
+
+Also, I've set up a `nextcloud-upgrade` version of the chart.
+To instasll it, update first the `Makefile` values before executing `make install`
+
+```diff
+- RELEASE_NAME = nextcloud-turingpi
+- # RELEASE_NAME = nextcloud-turingpi-upgrade
++ # RELEASE_NAME = nextcloud-turingpi
++ RELEASE_NAME = nextcloud-turingpi-upgrade
+- ENV = turingpi
+- # ENV = turingpi-upgrade
++ # ENV = turingpi
++ ENV = turingpi-upgrade
+```
