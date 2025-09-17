@@ -11,6 +11,7 @@
 - [in case of issues](#in-case-of-issues)
   - [Bad file format](#bad-file-format)
   - [MariaDB recurrent restart](#mariadb-recurrent-restart)
+  - [OCC Upgrades](#occ-upgrades)
 
 <!--TOC-->
 
@@ -98,3 +99,24 @@ This issue is most likely due to the Liveness and Readiness setup.
 In fact, MariaDB is hell of slow to startup. My guess is that the recurring log `Aborted connection 5 to db: [...]` is due a shutdown signal sent by liveness and/or readiness
 
 Higher the `initialDelaySecond` will help
+
+### OCC Upgrades
+
+One thing to mention is that an upgrade might take long, very long to process ! 10 to 15 minutes easy !
+
+To avoid issues while executing upgrades, a nice trick is to disable `liveness|readiness|startup probes` [values.turingpi.yaml#178](helm/values.turingpi.yaml#178)
+
+```diff
+  livenessProbe:
+-    enabled: true
++    enabled: false
+    periodSeconds: 45
+  readinessProbe:
+-    enabled: true
++    enabled: false
+    periodSeconds: 45
+  startupProbe:
+-    enabled: true
++    enabled: false
+    initialDelaySeconds: 120
+```

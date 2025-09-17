@@ -3,8 +3,10 @@
 # Service
 NAMESPACE = nextcloud
 RELEASE_NAME = nextcloud-turingpi
+# RELEASE_NAME = nextcloud-turingpi-upgrade
 # ENV ?= ### Specify the env to use
 ENV = turingpi
+# ENV = turingpi-upgrade
 pod := $$(kubectl get pods -n ${NAMESPACE} |  grep -m1 ${RELEASE_NAME} | cut -d' ' -f1)
 
 # Current dir
@@ -36,7 +38,7 @@ template: ## Helm template
 	@${HELM_BIN} template --dependency-update ${RELEASE_NAME} ${HELM_CHART_DIR} --namespace ${NAMESPACE} -f ${HELM_CHART_DIR}/values.${ENV}.yaml
 dry-run: template warning ## Template plus dry-run of the helm chart
 	@${HELM_BIN} upgrade --dry-run ${SET_FORCE} --install --namespace ${NAMESPACE} -f ${HELM_CHART_DIR}/values.${ENV}.yaml ${RELEASE_NAME} ${HELM_CHART_DIR}
-install: warning ## Helm intallation
+install: ## Helm intallation
 	@${HELM_BIN} upgrade ${SET_FORCE} --install --namespace ${NAMESPACE} --create-namespace -f ${HELM_CHART_DIR}/values.${ENV}.yaml ${RELEASE_NAME} ${HELM_CHART_DIR}
 logs: ## Get pod logs
 	@kubectl logs --since=1h -f -n ${NAMESPACE} $(pod)
