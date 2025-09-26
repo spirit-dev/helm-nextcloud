@@ -1,8 +1,6 @@
 # nextcloud
 
-[![GitLab Sync](https://img.shields.io/badge/gitlab_sync-nextcloud-blue?style=for-the-badge&logo=gitlab)](https://gitlab-internal.spirit-dev.net/github-mirror/helm-nextcloud) <!-- markdownlint-disable MD041 -->
-[![GitHub Mirror](https://img.shields.io/badge/github_mirror-nextcloud-blue?style=for-the-badge&logo=github)](https://github.com/spirit-dev/helm-nextcloud)
-[![App Status](https://argocd-internal.spirit-dev.net/api/badge?name=nextcloud-turingpi&revision=true&showAppName=true)](https://argocd-internal.spirit-dev.net/applications/nextcloud-turingpi)
+
 
 <!--TOC-->
 
@@ -133,4 +131,4 @@ To instasll it, update first the `Makefile` values before executing `make instal
 - # ENV = turingpi-upgrade
 + # ENV = turingpi
 + ENV = turingpi-upgrade
-```
+``
