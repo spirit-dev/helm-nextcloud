@@ -1,7 +1,7 @@
 dependencies:
 - name: nextcloud
   repository: https://nextcloud.github.io/helm/
-  version: 8.2.0
+  version: 8.3.0
 - name: postgresql
   repository: oci://registry-1.docker.io/bitnamicharts
   version: 16.7.27
@@ -11,5 +11,5 @@ dependencies:
 - name: redis
   repository: oci://registry-1.docker.io/bitnamicharts
   version: 22.0.7
-digest: sha256:7e36568824f92794d443a2cfef8062258e33fd5a5e967302d5ee171ee299804f
-generated: "2025-10-03T10:07:40.887609362Z"
+digest: sha256:0ea8a1951549c10eebcff1b79a1cc8549e88b76fe1f2f3b1a04929ef707fbb07
+generated: "2025-10-04T10:14:52.673864479Z"
